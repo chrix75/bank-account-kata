@@ -72,7 +72,7 @@ final public class AccountService {
     }
 
     public void openNewAccount(AccountNumber number, Money balance) {
-        if (!balance.currency().equals("EU")) {
+        if (!balance.inEuro()) {
             throw new BankingOperationException("Only account in Euro are accepted.");
         }
 

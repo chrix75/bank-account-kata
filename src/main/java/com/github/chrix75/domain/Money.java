@@ -75,4 +75,8 @@ final public class Money {
     public BigDecimal amount() {
         return amount;
     }
+
+    public boolean inEuro() {
+        return currency.equals("EU");
+    }
 }
