@@ -31,4 +31,6 @@ Une fois les scénarios écrits, j'ai pu passer à la conception et l'implément
 
 Dans l'en-tête des classes, je donne des informations sur les choix de conception (si besoin).
 
+Pour générer la javadoc avec ces informations, exécutez la commande ```mvn javadoc:javadoc```. Le fichier index.html sera dans le répertoire ```target/site/apidocs/```.
+
 
