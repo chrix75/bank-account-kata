@@ -4,6 +4,9 @@ import com.github.chrix75.domain.Money;
 
 import java.time.LocalDate;
 
+/**
+ * Objet valeur définissant une opération bancaire.
+ */
 public class BankingOperation {
     private final LocalDate date;
     private final Money amount;

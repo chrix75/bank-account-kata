@@ -7,6 +7,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Implémentation de l'interface {@link AccountStatementLineConverter} qui transforme une {@link BankingOperation} en
+ * objet {@link Map}.
+ * <p>
+ * Cette classe est utilisé lors des tests.
+ */
 final public class MapAccountStatementLineConverter implements AccountStatementLineConverter<Map<String, String>> {
     private final DateTimeFormatter dateTimeFormatter;
 

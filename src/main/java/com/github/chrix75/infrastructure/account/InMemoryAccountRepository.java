@@ -7,6 +7,11 @@ import com.github.chrix75.domain.account.AccountRepository;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Implémentation de l'interface {@link AccountRepository} stockant les comptes bancaires en mémoire.
+ * <p>
+ * Pour le Kata et les tests, cette implémentation permet de gérer le stockage des comptes bancaires de façon autonome.
+ */
 final public class InMemoryAccountRepository implements AccountRepository {
 
     private final Map<AccountNumber, Account> accounts = new HashMap<>();

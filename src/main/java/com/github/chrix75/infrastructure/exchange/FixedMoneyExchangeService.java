@@ -6,6 +6,10 @@ import com.github.chrix75.domain.exchange.MoneyExchangeService;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Implémentation de l'interface {@link MoneyExchangeService} qui simule un service fournissant le taux de change d'une
+ * devise.
+ */
 final public class FixedMoneyExchangeService implements MoneyExchangeService {
     private final Map<String, Double> rates = new HashMap<>();
 

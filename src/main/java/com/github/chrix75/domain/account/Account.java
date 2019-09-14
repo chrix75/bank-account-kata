@@ -9,6 +9,15 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Agrégat qui représente un compte bancaire en euro.
+ * <p>
+ * Pour le kata, les opérations du compte sont stockées directement dans une {@link List}.
+ * Dans un cas réel, cette solution ne sera pas optimale (stockage de toutes les opérations en mémoire, gestion du
+ * chargement) et la référence des opérations devraient être gérées par un autre composant.
+ * <p>
+ * J'ai également défini pour cette implémentation qu'un compte bancaire ne peut pas être à découvert.
+ */
 final public class Account {
     private final AccountNumber number;
     private Money balance;

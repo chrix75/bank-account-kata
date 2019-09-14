@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Objet valeur représentant un montant d'argent dans une devise.
+ */
 final public class Money {
     private static final List<String> VALID_CURRENCIES = Arrays.asList("EU", "US");
 
