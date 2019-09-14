@@ -28,7 +28,7 @@ final public class Account {
         return this.number;
     }
 
-    synchronized public void depositMoney(OperationAmount amount, LocalDate operationDate) {
+    public void depositMoney(OperationAmount amount, LocalDate operationDate) {
         if (amount.greaterThanZero()) {
             updateBalance(amount.value());
             operations.add(new BankingOperation(operationDate, amount.value(), balance));
