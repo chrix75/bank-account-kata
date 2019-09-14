@@ -34,7 +34,7 @@ final public class AccountService {
      * Les dépôt de 0 zéro ne sont pas acceptés et sont considérés comme des erreurs.
      *
      * @param number Numéro du compte concerné par le dépôt
-     * @param amount Quantité d'argent déposée (en euro et cette valeur doit être > 0)
+     * @param amount Quantité d'argent déposée (en euro et cette valeur doit être &gt; 0)
      * @param operationDate Date du dépôt
      * @throws BankingOperationException est levé si le dépot ne peut pas être réalisé.
      */
