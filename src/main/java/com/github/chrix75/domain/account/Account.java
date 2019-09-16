@@ -17,6 +17,9 @@ import java.util.List;
  * chargement) et la référence des opérations devraient être gérées par un autre composant.
  * <p>
  * J'ai également défini pour cette implémentation qu'un compte bancaire ne peut pas être à découvert.
+ *
+ * Remarque: Je n'ai pas fait référence au client du compte bancaire vu qu'il n'y avait aucune action demandée sur cette
+ * entité.
  */
 final public class Account {
     private final AccountNumber number;

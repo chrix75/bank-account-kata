@@ -15,12 +15,14 @@ import java.util.stream.Collectors;
  */
 final public class AccountStatement<T> {
     private final AccountStatementLineConverter<T> lineConverter;
+    private final List<BankingOperation> operations;
 
-    public AccountStatement(AccountStatementLineConverter<T> lineConverter) {
+    public AccountStatement(AccountStatementLineConverter<T> lineConverter, List<BankingOperation> operations) {
         this.lineConverter = lineConverter;
+        this.operations = operations;
     }
 
-    public List<T> lines(List<BankingOperation> operations) {
+    public List<T> lines() {
         return operations.stream().map(lineConverter::convert).collect(Collectors.toList());
     }
 }

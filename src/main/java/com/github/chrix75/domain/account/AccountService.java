@@ -15,8 +15,8 @@ import java.time.LocalDate;
  * <p>
  * J'ai également préféré d'écrire une méthode pour les dépôts et une pour les retraits au lieu d'en avoir qu'une
  * seule qui se base sur le montant de l'opération. Cela permet de gérer certaines contraintes métiers plus facilement.
- * Cette solution est néanmoins viable car nous n'avons que 2 opérations. Si ce nombre tend à augmenter, il sera alors
- * plus sage de définir les opérations via des statégies.
+ * Cette solution est néanmoins viable car nous n'avons que 2 opérations. Si ce nombre tend à augmenter, il sera probablement
+ * plus approprié de définir les opérations via des statégies.
  */
 final public class AccountService {
 

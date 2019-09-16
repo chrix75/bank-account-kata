@@ -1,7 +1,6 @@
 package com.github.chrix75.unittests.domain.statement;
 
 
-import com.github.chrix75.domain.Money;
 import com.github.chrix75.domain.operations.BankingOperation;
 import com.github.chrix75.domain.statement.AccountStatement;
 import com.github.chrix75.utils.statement.MapAccountStatementLineConverter;
@@ -12,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 import static com.github.chrix75.domain.Money.amountInEuro;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class AccountStatementTest {
 
@@ -20,13 +19,13 @@ public class AccountStatementTest {
     @Test
     public void converts_banking_operations_into_list_of_maps() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        AccountStatement<Map<String, String>> statement = new AccountStatement<>(new MapAccountStatementLineConverter(dtf));
-
         List<BankingOperation> operations = Arrays.asList(
                 new BankingOperation(LocalDate.of(2019, 10, 1), amountInEuro(-80), amountInEuro(100)),
                 new BankingOperation(LocalDate.of(2019, 10, 4), amountInEuro(30), amountInEuro(130)));
 
-        List<Map<String, String>> lines = statement.lines(operations);
+        AccountStatement<Map<String, String>> statement = new AccountStatement<>(new MapAccountStatementLineConverter(dtf), operations);
+
+        List<Map<String, String>> lines = statement.lines();
 
         assertEquals(2, lines.size());
         List<Map<String, String>> expectedLines = expectedLines();
@@ -36,10 +35,10 @@ public class AccountStatementTest {
     @Test
     public void converts_no_banking_operations_into_list_of_maps() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        AccountStatement<Map<String, String>> statement = new AccountStatement<>(new MapAccountStatementLineConverter(dtf));
-
         List<BankingOperation> operations = Collections.emptyList();
-        List<Map<String, String>> lines = statement.lines(operations);
+        AccountStatement<Map<String, String>> statement = new AccountStatement<>(new MapAccountStatementLineConverter(dtf), operations);
+
+        List<Map<String, String>> lines = statement.lines();
 
         assertEquals(0, lines.size());
     }

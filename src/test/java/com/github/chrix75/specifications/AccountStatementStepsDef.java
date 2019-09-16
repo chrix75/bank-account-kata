@@ -5,9 +5,9 @@ import com.github.chrix75.domain.OperationAmount;
 import com.github.chrix75.domain.account.Account;
 import com.github.chrix75.domain.operations.BankingOperation;
 import com.github.chrix75.domain.statement.AccountStatement;
-import com.github.chrix75.domain.statement.AccountStatementLineConverter;
+import com.github.chrix75.domain.statement.AccountStatementService;
 import com.github.chrix75.infrastructure.account.InMemoryAccountRepository;
-import com.github.chrix75.utils.statement.MapAccountStatementLineConverter;
+import com.github.chrix75.infrastructure.statement.SimpleMapAccountStatementService;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java8.En;
@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 public class AccountStatementStepsDef implements En {
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private List<BankingOperation> bankingOperations;
-
+    private AccountStatementService accountStatementService = new SimpleMapAccountStatementService(TestContext.accountRepository);
 
     @After
     public void resetAccountRepository() {
@@ -47,9 +47,8 @@ public class AccountStatementStepsDef implements En {
 
         Then("he gets the following statement printing", (DataTable table) -> {
             List<Map<String, String>> expectedLines = table.asMaps();
-            AccountStatementLineConverter<Map<String, String>> statementLineConverter = new MapAccountStatementLineConverter(dateFormatter);
-            AccountStatement<Map<String, String>> accountStatement = new AccountStatement<>(statementLineConverter);
-            List<Map<String, String>> statementLines = accountStatement.lines(bankingOperations);
+            AccountStatement<Map<String, String>> accountStatement = accountStatementService.accountStatement(TestContext.accountNumber);
+            List<Map<String, String>> statementLines = accountStatement.lines();
             for (int i = 0; i < expectedLines.size(); ++i) {
                 Map<String, String> expectedLine = expectedLines.get(i);
                 Map<String, String> currentOperation = statementLines.get(i);
