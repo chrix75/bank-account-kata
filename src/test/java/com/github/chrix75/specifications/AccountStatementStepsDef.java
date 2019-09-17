@@ -1,12 +1,12 @@
 package com.github.chrix75.specifications;
 
-import com.github.chrix75.domain.Money;
-import com.github.chrix75.domain.OperationAmount;
-import com.github.chrix75.domain.account.Account;
-import com.github.chrix75.domain.statement.AccountStatement;
-import com.github.chrix75.domain.statement.AccountStatementService;
-import com.github.chrix75.infrastructure.account.InMemoryAccountRepository;
-import com.github.chrix75.infrastructure.statement.SimpleMapAccountStatementService;
+import com.github.chrix75.thebank.domain.Money;
+import com.github.chrix75.thebank.domain.OperationAmount;
+import com.github.chrix75.thebank.domain.account.Account;
+import com.github.chrix75.thebank.domain.statement.AccountStatement;
+import com.github.chrix75.thebank.domain.statement.AccountStatementService;
+import com.github.chrix75.thebank.infrastructure.account.InMemoryAccountRepository;
+import com.github.chrix75.thebank.infrastructure.statement.SimpleMapAccountStatementService;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
 import io.cucumber.java8.En;
