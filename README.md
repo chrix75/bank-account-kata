@@ -13,7 +13,9 @@ J'ai donc décidé de considérer la notion de devises dans les scénarios pour 
 Obtention du code: ```git clone https://github.com/chrix75/bank-account-kata.git```
 
 Exécution des tests: ```mvn clean test```   
-Cette commande exécutera les tests unitaires et les scénarios.
+Cette commande exécutera les tests unitaires et les scénarios écrits en langage Gherkin. Ces scénarios sont exécutés par Cucumber 
+intégré à JUnit.
+
 
 ## Choix techniques
 
@@ -24,9 +26,11 @@ Cette commande exécutera les tests unitaires et les scénarios.
 
 ## Méthodologie
 
-J'ai commencé par écrire les scénarios en me basant sur le 3 user stories fournis. Cela m'a permis de définir un ensemble de spécification par des exemples.
-Ces scénarios exécutés par Cucumber sont écrits en anglais et se repose sur la syntaxe Gherkins 
-J'ai également défini un glossaire dont les définitions sont en français et fourni la description du personnage principale des scénarios.
+J'ai commencé par écrire les scénarios en me basant sur le 3 user stories fournis. Cela m'a permis de définir un ensemble de 
+spécification par des exemples.
+Ces scénarios exécutés par Cucumber sont écrits en anglais et se repose sur la syntaxe Gherkin 
+J'ai également défini un glossaire dont les définitions sont en français et fourni la description du personnage principale des 
+scénarios.
 
 Une fois les scénarios écrits, j'ai pu passer à la conception et l'implémentation.
 
