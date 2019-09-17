@@ -1,4 +1,4 @@
-package com.github.chrix75.thebank.statement;
+package com.github.chrix75.thebank.utils.statement;
 
 import com.github.chrix75.thebank.domain.operations.BankingOperation;
 import com.github.chrix75.thebank.domain.statement.AccountStatementLineConverter;

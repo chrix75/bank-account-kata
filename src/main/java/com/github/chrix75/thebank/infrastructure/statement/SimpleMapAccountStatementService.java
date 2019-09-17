@@ -6,7 +6,7 @@ import com.github.chrix75.thebank.domain.account.AccountRepository;
 import com.github.chrix75.thebank.domain.statement.AccountStatement;
 import com.github.chrix75.thebank.domain.statement.AccountStatementLineConverter;
 import com.github.chrix75.thebank.domain.statement.AccountStatementService;
-import com.github.chrix75.thebank.statement.MapAccountStatementLineConverter;
+import com.github.chrix75.thebank.utils.statement.MapAccountStatementLineConverter;
 
 import java.time.format.DateTimeFormatter;
 import java.util.Map;

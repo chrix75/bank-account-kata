@@ -3,7 +3,7 @@ package com.github.chrix75.unittests.thebank.domain.statement;
 
 import com.github.chrix75.thebank.domain.operations.BankingOperation;
 import com.github.chrix75.thebank.domain.statement.AccountStatement;
-import com.github.chrix75.thebank.statement.MapAccountStatementLineConverter;
+import com.github.chrix75.thebank.utils.statement.MapAccountStatementLineConverter;
 import org.junit.Test;
 
 import java.time.LocalDate;
