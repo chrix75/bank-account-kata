@@ -18,7 +18,7 @@ import java.time.LocalDate;
 
 import static com.github.chrix75.domain.Money.amountInEuro;
 import static java.math.BigDecimal.valueOf;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class AccountServiceTest {
 
@@ -28,10 +28,10 @@ public class AccountServiceTest {
     private final AccountNumber accountNumber = new AccountNumber("123456789");
 
     @Rule
-    public ExpectedException exceptionRule = ExpectedException.none();
+    public final ExpectedException exceptionRule = ExpectedException.none();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         accountRepository = new InMemoryAccountRepository();
         moneyExchangeService = new FixedMoneyExchangeService();
         accountService = new AccountService(accountRepository, moneyExchangeService);
@@ -74,8 +74,6 @@ public class AccountServiceTest {
         try {
             accountService.openNewAccount(accountNumber, amountInEuro(100));
             accountService.makeDeposit(accountNumber, new Money(BigDecimal.TEN, "US"), operationDate);
-        } catch (Exception e) {
-            throw e;
         } finally {
             Account account = accountRepository.accountByNumber(accountNumber);
             assertEquals(0, valueOf(100).compareTo(account.balance().amount()));
@@ -137,8 +135,6 @@ public class AccountServiceTest {
         try {
             accountService.openNewAccount(accountNumber, amountInEuro(100));
             accountService.makeWithdrawal(accountNumber, amountInEuro(101), operationDate);
-        } catch (Exception e) {
-            throw e;
         } finally {
             Account account = accountRepository.accountByNumber(accountNumber);
             assertEquals(0, valueOf(100).compareTo(account.balance().amount()));

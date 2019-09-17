@@ -3,7 +3,6 @@ package com.github.chrix75.specifications;
 import com.github.chrix75.domain.Money;
 import com.github.chrix75.domain.account.Account;
 import com.github.chrix75.domain.account.AccountService;
-import com.github.chrix75.domain.operations.BankingOperation;
 import com.github.chrix75.domain.operations.BankingOperationException;
 import com.github.chrix75.infrastructure.account.InMemoryAccountRepository;
 import com.github.chrix75.infrastructure.exchange.FixedMoneyExchangeService;
@@ -32,13 +31,9 @@ public class BankingOperationStepsDef implements En {
     }
 
     public BankingOperationStepsDef() {
-        Given("Stephan opened his account with an initial deposit of (\\d+) euro", (Integer amount) -> {
-            accountService.openNewAccount(TestContext.accountNumber, amountInEuro(amount));
-        });
+        Given("Stephan opened his account with an initial deposit of (\\d+) euro", (Integer amount) -> accountService.openNewAccount(TestContext.accountNumber, amountInEuro(amount)));
 
-        Given("1 US dollar is worth (\\d+\\.\\d{1,2}) euro", (Double rate) -> {
-            moneyExchangeService.changeRate("US", "EU", rate);
-        });
+        Given("1 US dollar is worth (\\d+\\.\\d{1,2}) euro", (Double rate) -> moneyExchangeService.changeRate("US", "EU", rate));
 
         When("Stephan makes a deposit in his account of (\\d+) euro at (\\d{4}-\\d{2}-\\d{2})", (Integer amount, String date) -> {
             try {
@@ -78,8 +73,6 @@ public class BankingOperationStepsDef implements En {
             assertEquals(expected, account.balance());
         });
 
-        Then("the withdraw is refused", () -> {
-            assertTrue(operationException instanceof BankingOperationException);
-        });
+        Then("the withdraw is refused", () -> assertTrue(operationException instanceof BankingOperationException));
     }
 }

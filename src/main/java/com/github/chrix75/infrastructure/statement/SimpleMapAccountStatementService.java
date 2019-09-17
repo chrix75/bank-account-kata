@@ -12,11 +12,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 public class SimpleMapAccountStatementService implements AccountStatementService<Map<String, String>> {
-    private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private final DateTimeFormatter dateFormatter;
     private final AccountRepository accountRepository;
 
-    public SimpleMapAccountStatementService(AccountRepository accountRepository) {
+    public SimpleMapAccountStatementService(AccountRepository accountRepository,
+                                            DateTimeFormatter dateFormatter) {
         this.accountRepository = accountRepository;
+        this.dateFormatter = dateFormatter;
     }
 
     @Override

@@ -22,7 +22,7 @@ import java.util.List;
 final public class Account {
     private final AccountNumber number;
     private Money balance;
-    private List<BankingOperation> operations;
+    private final List<BankingOperation> operations;
 
     public Account(AccountNumber number, Money balance) {
         this.number = number;

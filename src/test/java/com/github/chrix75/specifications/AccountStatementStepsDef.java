@@ -3,7 +3,6 @@ package com.github.chrix75.specifications;
 import com.github.chrix75.domain.Money;
 import com.github.chrix75.domain.OperationAmount;
 import com.github.chrix75.domain.account.Account;
-import com.github.chrix75.domain.operations.BankingOperation;
 import com.github.chrix75.domain.statement.AccountStatement;
 import com.github.chrix75.domain.statement.AccountStatementService;
 import com.github.chrix75.infrastructure.account.InMemoryAccountRepository;
@@ -22,8 +21,7 @@ import static org.junit.Assert.assertEquals;
 
 public class AccountStatementStepsDef implements En {
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    private List<BankingOperation> bankingOperations;
-    private AccountStatementService accountStatementService = new SimpleMapAccountStatementService(TestContext.accountRepository);
+    private final AccountStatementService accountStatementService = new SimpleMapAccountStatementService(TestContext.accountRepository, dateFormatter);
 
     @After
     public void resetAccountRepository() {
@@ -35,14 +33,11 @@ public class AccountStatementStepsDef implements En {
         Given("the following banking operations made by Stephan", (DataTable table) -> {
             Account account = TestContext.accountRepository.accountByNumber(TestContext.accountNumber);
 
-            table.asMaps().forEach(line -> {
-                processLineAsBankingOperation(account, line);
-            });
+            table.asMaps().forEach(line -> processLineAsBankingOperation(account, line));
         });
 
         When("Stephan asks the account statement", () -> {
             Account account = TestContext.accountRepository.accountByNumber(TestContext.accountNumber);
-            bankingOperations = account.allOperations();
         });
 
         Then("he gets the following statement printing", (DataTable table) -> {

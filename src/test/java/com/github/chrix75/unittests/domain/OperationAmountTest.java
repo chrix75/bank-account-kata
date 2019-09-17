@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class OperationAmountTest {
 
     @Rule
-    public ExpectedException exceptionRule = ExpectedException.none();
+    public final ExpectedException exceptionRule = ExpectedException.none();
 
     @Test
     public void creates_a_banking_operation() {

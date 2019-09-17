@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 public class MoneyTest {
 
     @Rule
-    public ExpectedException exceptionRule = ExpectedException.none();
+    public final ExpectedException exceptionRule = ExpectedException.none();
 
     @Test
     public void creates_amount_of_money_in_euro() {
