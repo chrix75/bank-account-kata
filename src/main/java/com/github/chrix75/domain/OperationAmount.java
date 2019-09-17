@@ -3,8 +3,6 @@ package com.github.chrix75.domain;
 import com.github.chrix75.domain.operations.BankingOperationException;
 
 /**
- * Définit le montant d'une opération.
- * <p>
  * J'ai décidé de définir cette classe pour empêcher toute opération de 0 euro.
  * Cela permet de placer ce controle à un seul endroit.
  */

@@ -4,28 +4,25 @@ import com.github.chrix75.domain.Money;
 
 import java.time.LocalDate;
 
-/**
- * Objet valeur définissant une opération bancaire.
- */
 public class BankingOperation {
     private final LocalDate date;
     private final Money amount;
-    private final Money balance;
+    private final Money balanceAfter;
 
     /**
      * Crée un nouvelle opération bancaire
      *
      * @param date    date de l'opération
      * @param amount  montant de l'opération qui doit être en euro
-     * @param balance solde du compte bancaire après cette opération
+     * @param balanceAfter solde du compte bancaire après cette opération
      */
-    public BankingOperation(LocalDate date, Money amount, Money balance) {
+    public BankingOperation(LocalDate date, Money amount, Money balanceAfter) {
         if (!amount.inEuro()) {
             throw new IllegalArgumentException("Banking operation must be in euro.");
         }
         this.date = date;
         this.amount = amount;
-        this.balance = balance;
+        this.balanceAfter = balanceAfter;
     }
 
     public LocalDate date() {
@@ -37,6 +34,6 @@ public class BankingOperation {
     }
 
     public Money balanceAfter() {
-        return balance;
+        return balanceAfter;
     }
 }

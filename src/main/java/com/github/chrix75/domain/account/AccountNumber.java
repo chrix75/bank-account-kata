@@ -1,8 +1,6 @@
 package com.github.chrix75.domain.account;
 
 /**
- * Objet valeur définissant un numéro de compte bancaire.
- * <p>
  * Pour ce projet, un numéro de compte doit être de 9 chiffres.
  */
 final public class AccountNumber {

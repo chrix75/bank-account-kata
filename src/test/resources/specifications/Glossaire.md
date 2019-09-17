@@ -18,6 +18,9 @@ Montant d'une opération bancaire définit par une valeur et une devise.
 ## BANKING OPERATION (opération bancaire)
 Une opération bancaire est une action datée de dépôt ou de retrait d'argent sur un compte bancaire.
 
+## Exchange (échange de devise)
+Action de convertir une devise en une autre.
+
 ## DEPOSIT (dépôt)
 Opération bancaire qui consite à déposer un montant en euros sur un compte bancaire.
 

@@ -1,8 +1,5 @@
 package com.github.chrix75.domain.account;
 
-/**
- * Interface du repository gérant la persistence du compte bancaire.
- */
 public interface AccountRepository {
     void saveAccount(Account account);
 

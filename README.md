@@ -5,6 +5,9 @@
 Ce projet présente certaines opérations sur un compte bancaire.
 Ces opérations sont: dépot d'argent, retrait d'argent et consultation des opérations d'un compte.
 
+La note du Kata informait qu'on pouvait se baser sur notre expérience personnelle.
+J'ai donc décidé de considérer la notion de devises dans les scénarios pour les user stories de retrait et de dépôt.
+
 ## Récupération du projet
 
 Obtention du code: ```git clone https://github.com/chrix75/bank-account-kata.git```

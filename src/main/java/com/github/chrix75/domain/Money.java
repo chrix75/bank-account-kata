@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Objet valeur représentant un montant d'argent dans une devise.
+ * Dans le contexte du Kata, j'ai juste défini 2 devises.
  */
 final public class Money {
     private static final List<String> VALID_CURRENCIES = Arrays.asList("EU", "US");

@@ -8,8 +8,6 @@ import com.github.chrix75.domain.operations.BankingOperationException;
 import java.time.LocalDate;
 
 /**
- * Service métier gérant les opérations d'un compte bancaires.
- * <p>
  * J'ai volontairement implémenté directement une classe. Dans le contexte actuel, je n'ai pas vu l'intêret de définir
  * une interface.
  * <p>
